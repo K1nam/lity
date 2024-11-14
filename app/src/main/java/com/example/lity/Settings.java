@@ -1,8 +1,7 @@
 package com.example.lity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,37 +10,25 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class FormCadastro extends AppCompatActivity {
+public class Settings extends AppCompatActivity {
 
-    private AppCompatButton bt_criar;
+    private AppCompatButton bt_git;
+    private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-
-        setContentView(R.layout.activity_form_cadastro);
+        setContentView(R.layout.activity_settings);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
         iniciarcomponentes();
-
-        bt_criar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(FormCadastro.this, FormLogin.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
-    private void iniciarcomponentes() {
-        bt_criar = findViewById(R.id.bt_criar);
-
+    private void iniciarcomponentes(){
+        bt_git = findViewById(R.id.bt_git);
+        back = findViewById(R.id.back);
     }
-
 }

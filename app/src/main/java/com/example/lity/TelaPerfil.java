@@ -2,9 +2,12 @@ package com.example.lity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -12,6 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class TelaPerfil extends AppCompatActivity {
+
+    private AppCompatButton bt_deslogar;
+    private ImageView settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,26 @@ public class TelaPerfil extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        iniciarcomponentes();
+
+        bt_deslogar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(TelaPerfil.this, FormLogin.class);
+                startActivity(intent);
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(TelaPerfil.this, Settings.class);
+                startActivity(intent);
+            }
+        });
+
     }
 //bottomnav troca telas
     protected void setupBottomNavigation(int currentActivity) {
@@ -55,5 +81,9 @@ public class TelaPerfil extends AppCompatActivity {
             }
         });
         bottomNavigationView.setSelectedItemId(currentActivity);
+    }
+    private void iniciarcomponentes(){
+        settings = findViewById(R.id.settings);
+        bt_deslogar = findViewById(R.id.bt_deslogar);
     }
 }

@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class FormLogin extends AppCompatActivity {
 
     private TextView text_cadastro;
+    private AppCompatButton bt_entrar;
 
 
     @Override
@@ -29,6 +31,16 @@ public class FormLogin extends AppCompatActivity {
         });
         iniciarcomponentes();
 
+        bt_entrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(FormLogin.this,InicioPromos.class);
+                startActivity(intent);
+            }
+        });
+
+
         text_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +54,6 @@ public class FormLogin extends AppCompatActivity {
     }
     private void iniciarcomponentes(){
         text_cadastro = findViewById(R.id.text_cadastro);
+        bt_entrar = findViewById(R.id.bt_entrar);
     }
-
 }
