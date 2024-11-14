@@ -6,4 +6,6 @@
     <color name="azulroyal">#4F70DB</color>
     <color name="azulpastel">#4F9BDB</color>
     <color name="verdem">#4FDBC0</color>
+    <color name="transparente">#00000000</color>
+    <color name="teste">#505050</color>
 </resources>

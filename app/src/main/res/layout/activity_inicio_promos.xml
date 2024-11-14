@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".InicioPromos">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:queryHint="Pesquisar promoções"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    android:background="@drawable/searchviewredondo"
+                    android:padding="8dp"
+                    android:layout_margin="8dp"
+                    />
+
+                <FrameLayout
+                    android:id="@+id/promotion_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/searchView"
+                    app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:padding="8dp">
+
+                                        <ImageView
+                                            android:id="@+id/promoImage1"
+                                            android:layout_width="70dp"
+                                            android:layout_height="70dp"
+                                            android:layout_marginEnd="8dp"
+                                            android:contentDescription="Imagem da Promoção 1"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/promo1"
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="wrap_content"
+                                            android:text="Promoção 1 - Clique para mais detalhes"
+                                            android:textSize="18sp"
+                                            android:textColor="@color/black"
+                                            android:padding="8dp" />
+
+                                        <ImageButton
+                                            android:id="@+id/heart1"
+                                            android:layout_width="48dp"
+                                            android:layout_height="48dp"
+                                            android:src="@drawable/ic_heart_empty"
+                                            android:background="@null"
+                                            android:contentDescription="Salvar nos favoritos"
+                                            />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:padding="8dp">
+
+                                        <ImageView
+                                            android:id="@+id/promoImage2"
+                                            android:layout_width="70dp"
+                                            android:layout_height="70dp"
+                                            android:layout_marginEnd="8dp"
+                                            android:contentDescription="Imagem da Promoção 2"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/promo2"
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="wrap_content"
+                                            android:text="Promoção 2 - Clique para mais detalhes"
+                                            android:textColor="@color/black"
+                                            android:textSize="18sp"
+                                            android:padding="8dp"
+                                            />
+
+                                        <ImageButton
+                                            android:id="@+id/heart2"
+                                            android:layout_width="48dp"
+                                            android:layout_height="48dp"
+                                            android:src="@drawable/ic_heart_empty"
+                                            android:background="@null"
+                                            android:contentDescription="Salvar nos favoritos"
+                                            />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:padding="8dp">
+
+                                        <ImageView
+                                            android:id="@+id/promoImage3"
+                                            android:layout_width="70dp"
+                                            android:layout_height="70dp"
+                                            android:layout_marginEnd="8dp"
+                                            android:contentDescription="Imagem da Promoção 3"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/promo3"
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="wrap_content"
+                                            android:text="Promoção 3 - Clique para mais detalhes"
+                                            android:textColor="@color/black"
+                                            android:textSize="18sp"
+                                            android:padding="8dp"
+                                            />
+
+                                        <ImageButton
+                                            android:id="@+id/heart3"
+                                            android:layout_width="48dp"
+                                            android:layout_height="48dp"
+                                            android:src="@drawable/ic_heart_empty"
+                                            android:background="@null"
+                                            android:contentDescription="Salvar nos favoritos"
+                                            />
+                                </LinearLayout>
+                        </LinearLayout>
+                </FrameLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:contentDescription="Adicionar promoção"
+                    android:src="@drawable/ic_add"
+
+                    app:backgroundTint="@color/azulroyal"
+                    app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                />
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azulroyal"
+
+                    app:menu="@menu/bottomnavmenu"
+                    app:itemIconTint="@color/white"
+                    app:itemTextColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
